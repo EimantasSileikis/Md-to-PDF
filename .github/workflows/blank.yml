@@ -14,7 +14,6 @@ jobs:
         run: |-
           pip install grip 
           mkdir -p _output
-          cd Md-to-PDF
           echo; echo "Input Folder Listing"
           ls
           echo; echo "Generating PDF"
