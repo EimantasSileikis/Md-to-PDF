@@ -13,7 +13,7 @@ jobs:
       - name: Build book
         run: |
           sudo apt install pandoc texlive-latex-extra;
-          pandoc README.md -f markdown -t html -o readme.html
+          pandoc README.md -f markdown -t html -o ../_output/readme.html
           mkdir -p _output
       
       - uses: actions/upload-artifact@v1
