@@ -15,7 +15,7 @@ jobs:
           sudo apt install pandoc texlive-latex-extra
           mkdir -p _output
           ls -a
-          pandoc README.md -o _output/readme.pdf
+          pandoc README.md -o _output/readme.html
       
       - uses: actions/upload-artifact@v1
         with:
