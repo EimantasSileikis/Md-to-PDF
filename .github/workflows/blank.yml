@@ -12,7 +12,8 @@ jobs:
 
       - name: Build book
         run: |
-          sudo apt install pandoc texlive-latex-extra;
+          sudo apt install pandoc texlive-latex-extra
+          ls -a
           pandoc README.md -f markdown -t html -o ../_output/readme.html
           mkdir -p _output
       
@@ -20,3 +21,5 @@ jobs:
         with:
           name: output
           path: _output
+          
+          
