@@ -13,9 +13,7 @@ jobs:
       - name: Build book
         run: |
           sudo apt install pandoc texlive-latex-extra;
-          for file in $(ls ./ |grep *.md); do 
-          pandoc $file -o readme.pdf
-          done    
+          pandoc README.md -f markdown -t html -o readme.html
           mkdir -p _output
       
       - uses: actions/upload-artifact@v1
