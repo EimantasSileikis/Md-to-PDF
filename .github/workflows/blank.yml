@@ -15,9 +15,10 @@ jobs:
           npm i -g md-to-pdf
           mkdir -p _output
           cat README.md | md-to-pdf > output.pdf
-          - uses: stefanzweifel/git-auto-commit-action@v4
-            with:
-              commit_message: Changed files
+          
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Changed files
       
       - uses: actions/upload-artifact@v1
         with:
