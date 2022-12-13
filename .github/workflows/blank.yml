@@ -13,8 +13,9 @@ jobs:
       - name: Convert README.md to pdf
         run: |
           npm i -g md-to-pdf
-          for readme in */; do
-            echo $readme
+          for dir in */; do
+            cd $dir
+            cat README.md | md-to-pdf > ./README.pdf
           done
           
           
