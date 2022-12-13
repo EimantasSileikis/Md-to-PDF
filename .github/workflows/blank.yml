@@ -13,11 +13,8 @@ jobs:
       - name: Convert README.md to pdf
         run: |
           npm i -g md-to-pdf
-          set -f
-          for dir in */README.md
-          do
-              dir=${dir%*/}
-              cat ${dir} | md-to-pdf > ./output.pdf
+          find . -name README.md | while read file; do
+            cat $file | md-to-pdf > ./output.pdf
           done
           
           
