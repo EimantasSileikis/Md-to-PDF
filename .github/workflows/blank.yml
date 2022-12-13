@@ -12,9 +12,9 @@ jobs:
 
       - name: Convert README.md to pdf
         run: |
-          npm install -g markdown-pdf
+          npm i -g md-to-pdf
           mkdir -p _output
-          markdown-pdf README.md -o _output/output.pdf
+          cat README.md | md-to-pdf > _output/output.pdf
       
       - uses: actions/upload-artifact@v1
         with:
