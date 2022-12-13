@@ -13,6 +13,7 @@ jobs:
       - name: Convert README.md to pdf
         run: |
           npm i -g md-to-pdf
+          shopt -s globstar
           for dir in **/README.md; do
             cat $dir | md-to-pdf > ../$dir/output.pdf
           done
