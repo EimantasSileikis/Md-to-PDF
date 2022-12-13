@@ -1,4 +1,4 @@
-<h1 align="center">Angular - The modern web developer's platform.</h1>
+<h1 align="center">Nu laba diena, čia Angular!!!!.</h1>
 
 <p align="center">
   <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg" alt="angular-logo" width="120px" height="120px"/>
