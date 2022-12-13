@@ -13,10 +13,9 @@ jobs:
       - name: Convert README.md to pdf
         run: |
           sudo apt-get install pandoc texlive-latex-base texlive-fonts-recommended texlive-extra-utils texlive-latex-extra
-          pip install pandocfilters
+          apt-get update
           mkdir -p _output
-          pandoc README.md -o README.pdf --filter=pandoc-svg.py
-          
+          pandoc README.md -o README.pdf
       
       - uses: actions/upload-artifact@v1
         with:
