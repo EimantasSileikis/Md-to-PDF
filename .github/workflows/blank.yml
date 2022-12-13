@@ -13,7 +13,10 @@ jobs:
       - name: Convert README.md to pdf
         run: |
           npm i -g md-to-pdf
-          cat README.md | md-to-pdf > output.pdf
+          for d in */ ; do
+            echo "$d"
+          done
+          
           
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
