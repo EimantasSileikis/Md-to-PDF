@@ -13,7 +13,6 @@ jobs:
       - name: Convert README.md to pdf
         run: |
           sudo apt-get install pandoc texlive-latex-base texlive-fonts-recommended texlive-extra-utils texlive-latex-extra
-          apt-get update
           mkdir -p _output
           pandoc README.md -o _output/README.pdf
       
