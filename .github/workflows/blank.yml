@@ -14,7 +14,7 @@ jobs:
         run: |
           npm i -g md-to-pdf
           for readme in */README.md ; do
-            cat readme | md-to-pdf > readme/output.pdf
+            cat $readme | md-to-pdf > ../output.pdf
           done
           
           
