@@ -14,7 +14,8 @@ jobs:
         run: |
           sudo apt-get install pandoc texlive-latex-base texlive-fonts-recommended texlive-extra-utils texlive-latex-extra
           mkdir -p _output
-          pandoc README.md -o _output/readme.pdf --filter=pandoc-svg.py
+          pandoc README.md -o README.html
+          pandoc README.html -o _output/README.pdf
           
       
       - uses: actions/upload-artifact@v1
