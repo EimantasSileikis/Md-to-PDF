@@ -14,7 +14,7 @@ jobs:
         run: |
           npm i -g md-to-pdf
           mkdir -p _output
-          md-to-pdf _output/README.pdf
+          md-to-pdf README.md
       
       - uses: actions/upload-artifact@v1
         with:
