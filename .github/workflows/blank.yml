@@ -1,4 +1,4 @@
-name: convert
+name: Convert README.md to PDF
 
 on:
   push:
@@ -14,7 +14,7 @@ jobs:
         run: |
           npm i -g md-to-pdf
           find . -name README.md -type f | while read file; do
-            cat "$file" | md-to-pdf > ./"${file%/*}"/output.pdf
+            cat "$file" | md-to-pdf > ./"${file%/*}"/README.pdf
           done          
           
       - uses: stefanzweifel/git-auto-commit-action@v4
