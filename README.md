@@ -3,7 +3,7 @@
 <p align="center">
   <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg" alt="angular-logo" width="120px" height="120px"/>
   <br>
-  <i>Angular is a development platform for building mobile and desktop web applications
+  <i>Čia aš sugalvojau pakeisti failą, just for fun ĄĄĄĄČČČĘĘĖĮŠŠŲŲŪ
     <br> using Typescript/JavaScript and other languages.</i>
   <br>
 </p>
