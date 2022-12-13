@@ -17,6 +17,9 @@ jobs:
           for dir in **/README.md; do
             cat $dir | md-to-pdf > ../$dir/output.pdf
           done
+          find ./ -name README.md | while read fname; do
+            cat "$fname" | md-to-pdf > "../$fname/output.pdf"
+          done
           
           
       - uses: stefanzweifel/git-auto-commit-action@v4
