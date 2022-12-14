@@ -2,6 +2,9 @@ name: Convert README.md to PDF
 
 on:
   push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
   converttopdf:
