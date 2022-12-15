@@ -1,13 +1,9 @@
 const puppeteer = require("puppeteer");
 
 (async () => {
-    // Get the cmdline arguments
     const myArgs = process.argv.slice(2);
-    // The first argument is the HTML file
     const inputHtmlFile = myArgs[0]
-    // Extract the filename from input file, to create the output filename
-    const outputHtmlFileName = inputHtmlFile.replace(/\.[^/.]+$/, "") + '.pdf'
-    // Prepare the file path
+    const outputHtmlFileName = inputHtmlFile.replace(/\.[^/.]+$/, "") + 'README.pdf'
     const filePath = 'file:///' + __dirname + '/' + inputHtmlFile
 
     // Launch the headless browser
