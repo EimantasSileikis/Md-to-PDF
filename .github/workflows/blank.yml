@@ -18,7 +18,7 @@ jobs:
 
       - name: Convert README.md to pdf
         run: |
-          yarn add puppeteer --dev
+          yarn add puppeteer
           yarn install
           pip3 install grip
           find . -name README.md -type f -not -path "./node_modules/*" | while read file; do
