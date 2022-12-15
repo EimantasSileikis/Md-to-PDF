@@ -17,6 +17,7 @@ jobs:
         run: |
           sudo apt-get install -y libgbm1
           npm i puppeteer
+          npm i puppeteer-core
 
       - uses: actions/setup-node@v1
         env:
