@@ -15,9 +15,9 @@ jobs:
 
       - name: Convert README.md to pdf
         run: |
-          sudo apt install pandoc texlive-latex-extra
+          npm install -g markdown-pdf --ignore-scripts
           find . -name README.md -type f | while read file; do
-            pandoc "$file" -s -o ./"${file%/*}"/README.pdf
+            markdown-pdf "$file" -o ./"${file%/*}"/README.pdf
           done          
           
       - uses: stefanzweifel/git-auto-commit-action@v4
