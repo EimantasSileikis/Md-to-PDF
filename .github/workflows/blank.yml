@@ -15,12 +15,12 @@ jobs:
 
       - name: Convert README.md to pdf
         run: |
-          npm list -g | grep puppeteer || npm install -g puppeteer --no-shrinkwrap
-          pip3 install grip
+          sudo apt install pandoc
+          sudo apt install wkhtmltopdf
+          wget https://raw.githubusercontent.com/simov/markdown-viewer/master/themes/github.css
           find . -name README.md -type f | while read file; do
-            cat "$file" | grip - --export ./"${file%/*}"/README.html
-            node HtmlToPdf.js ./"${file%/*}"/README.html
-            rm ./"${file%/*}"/README.html
+            pandoc -f gfm -t html5 --metadata pagetitle="Readme.md" --css github.css \
+            "$file" -o ./"${file%/*}"/README.pdf
           done          
           
       - uses: stefanzweifel/git-auto-commit-action@v4
