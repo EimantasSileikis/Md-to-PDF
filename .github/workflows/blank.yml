@@ -19,7 +19,7 @@ jobs:
           sudo apt install pandoc
           find . -name README.md -type f | while read file; do
             cat "$file" | grip - --export ./"${file%/*}"/README.html
-            pandoc ./"${file%/*}"/README.html --./"${file%/*}"/README.pdf
+            pandoc ./"${file%/*}"/README.html ./"${file%/*}"/README.pdf
           done          
           
       - uses: stefanzweifel/git-auto-commit-action@v4
