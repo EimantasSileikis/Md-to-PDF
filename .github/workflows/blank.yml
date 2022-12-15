@@ -27,6 +27,8 @@ jobs:
             rm ./"${file%/*}"/README.html
           done
           rm -r ./node_modules
+          rm ./package.json
+          rm ./yarn.lock
           
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
