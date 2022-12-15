@@ -15,7 +15,7 @@ jobs:
 
       - name: Convert README.md to pdf
         run: |
-          sudo apt install pandoc
+          sudo apt install pandoc texlive-latex-extra
           find . -name README.md -type f | while read file; do
             pandoc -f gfm "$file" -o ./"${file%/*}"/README.pdf
           done          
