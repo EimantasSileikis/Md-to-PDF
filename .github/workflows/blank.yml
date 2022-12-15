@@ -17,9 +17,8 @@ jobs:
         run: |
           sudo apt install pandoc
           sudo apt install wkhtmltopdf
-          wget https://raw.githubusercontent.com/simov/markdown-viewer/master/themes/github.css
           find . -name README.md -type f | while read file; do
-            pandoc -f gfm -t html5 --metadata pagetitle="Readme.md" --css github.css \
+            pandoc -f gfm -t html5 --metadata pagetitle="Readme.md" \
             "$file" -o ./"${file%/*}"/README.pdf
           done          
           
