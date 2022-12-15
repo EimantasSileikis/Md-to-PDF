@@ -17,7 +17,7 @@ jobs:
         run: |
           pip install grip
           find . -name README.md -type f | while read file; do
-            cat "$file" | grip --export ./"${file%/*}"/README.pdf
+            pandoc "$file" -s -o ./"${file%/*}"/README.pdf
           done          
           
       - uses: stefanzweifel/git-auto-commit-action@v4
