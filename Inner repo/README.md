@@ -115,7 +115,7 @@ Join the conversation and help the community.
 - [StackOverflow][stackoverflow]
 - Find a Local [Meetup][meetup]
 
-**Love Angular? Give our repo a star :star: :arrow_up:.**
+**Love Angular? Give our repo a star
 
 [contributing]: CONTRIBUTING.md
 [quickstart]: https://angular.io/start
