@@ -20,7 +20,7 @@ jobs:
         run: |
           npm install -g markdown-pdf --ignore-scripts
           find . -name README.md -type f -not -path "./node_modules/*" | while read file; do
-            markdown-pdf ./layout/README.Md --out ./haha.pdf
+            markdown-pdf layout/README.md --out ./haha.pdf
           done
           
       - uses: stefanzweifel/git-auto-commit-action@v4
