@@ -18,9 +18,9 @@ jobs:
 
       - name: Convert README.md to pdf
         run: |
-          npm install -g markdown-pdf --ignore-scripts
+          npm install -g markdown-pdf
           find . -name README.md -type f -not -path "./node_modules/*" | while read file; do
-            markdown-pdf "./layout/README.md"
+            markdown-pdf "$file"
           done
           
       - uses: stefanzweifel/git-auto-commit-action@v4
