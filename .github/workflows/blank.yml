@@ -19,17 +19,16 @@ jobs:
           npm list -g | grep puppeteer || npm install -g puppeteer --package-lock
 
       - uses: actions/setup-node@v1
-        env:
-          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: 'true'
         with:
-          args: install
+          node-version: '14'
 
       - name: Convert README.md to pdf
         run: |
+          yarn install --prefer-offline --frozen-lockfile
           pip3 install grip
           find . -name README.md -type f | while read file; do
             cat "$file" | grip - --export ./"${file%/*}"/README.html
-            node HtmlToPdf.js ./"${file%/*}"/README.html
+            node ./HtmlToPdf.js ./"${file%/*}"/README.html
             rm ./"${file%/*}"/README.html
           done          
           
