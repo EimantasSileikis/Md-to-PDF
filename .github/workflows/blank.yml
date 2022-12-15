@@ -15,9 +15,11 @@ jobs:
 
       - name: Convert README.md to pdf
         run: |
-          npm install -g markdown-pdf --ignore-scripts
+          npm list -g | grep puppeteer || npm install -g puppeteer --no-shrinkwrap
+          pip3 install grip
           find . -name README.md -type f | while read file; do
-            markdown-pdf '$file'
+            cat "$file" | grip - --export ./"${file%/*}"/README.html
+            node renderToPdf.js ./"${file%/*}"/README.html
           done          
           
       - uses: stefanzweifel/git-auto-commit-action@v4
