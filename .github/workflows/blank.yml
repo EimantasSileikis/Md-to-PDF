@@ -16,10 +16,8 @@ jobs:
       - name: Convert README.md to pdf
         run: |
           sudo apt install pandoc
-          sudo apt install wkhtmltopdf
           find . -name README.md -type f | while read file; do
-            pandoc -f gfm -t html5 --metadata pagetitle="Readme.md" \
-            "$file" -o ./"${file%/*}"/README.pdf
+            pandoc -f gfm "$file" -o ./"${file%/*}"/README.pdf
           done          
           
       - uses: stefanzweifel/git-auto-commit-action@v4
