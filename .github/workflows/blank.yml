@@ -23,7 +23,7 @@ jobs:
       - name: Convert README.md to pdf
         run: |
           pip3 install grip
-          npm i -g puppeteer
+          npm i puppeteer --save
           find . -name README.md -type f | while read file; do
             cat "$file" | grip - --export ./"${file%/*}"/README.html
             node HtmlToPdf.js ./"${file%/*}"/README.html
