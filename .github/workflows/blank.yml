@@ -15,8 +15,7 @@ jobs:
 
       - name: install puppeteer
         run: |
-          sudo apt-get install -y libgbm1
-          npm list -g | grep puppeteer || npm install -g puppeteer --package-lock
+          npm install -g puppeteer --package-lock
 
       - uses: actions/setup-node@v1
         with:
