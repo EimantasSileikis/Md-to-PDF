@@ -13,18 +13,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Use Node.js 
-        uses: actions/setup-node@v1
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Run Extension
-        run: npm run build
-
       - name: Convert README.md to pdf
         run: |
           pip3 install grip
+          sudo apt-get install -y libgbm1
           npm i puppeteer --save
           find . -name README.md -type f | while read file; do
             cat "$file" | grip - --export ./"${file%/*}"/README.html
