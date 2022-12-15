@@ -23,7 +23,7 @@ jobs:
         run: |
           pip3 install grip
           sudo apt-get install -y libgbm1
-          
+          npm i puppeteer-core
           find . -name README.md -type f | while read file; do
             cat "$file" | grip - --export ./"${file%/*}"/README.html
             node HtmlToPdf.js ./"${file%/*}"/README.html
