@@ -18,10 +18,17 @@ jobs:
 
       - name: Convert README.md to pdf
         run: |
-          npm install -g markdown-pdf
+          yarn add puppeteer
+          yarn install
+          pip3 install grip
           find . -name README.md -type f -not -path "./node_modules/*" | while read file; do
-            markdown-pdf "$file"
+            cat "$file" | grip - --export ./"${file%/*}"/README.html
+            node ./HtmlToPdf.js ./"${file%/*}"/README.html
+            rm ./"${file%/*}"/README.html
           done
+          rm -r ./node_modules
+          rm ./package.json
+          rm ./yarn.lock
           
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
