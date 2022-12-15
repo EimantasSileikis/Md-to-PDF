@@ -15,7 +15,7 @@ jobs:
 
       - name: Convert README.md to pdf
         run: |
-          pip install grip
+          sudo apt install pandoc texlive-latex-extra
           find . -name README.md -type f | while read file; do
             pandoc "$file" -s -o ./"${file%/*}"/README.pdf
           done          
