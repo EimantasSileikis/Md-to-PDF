@@ -3,7 +3,7 @@ const puppeteer = require("puppeteer");
 (async () => {
     const myArgs = process.argv.slice(2);
     const inputHtmlFile = myArgs[0]
-    const outputHtmlFileName = 'README.pdf'
+    const outputHtmlFileName = inputHtmlFile.replace(/\.[^/.]+$/, "") + '.pdf'
     const filePath = 'file:///' + __dirname + '/' + inputHtmlFile
 
     // Launch the headless browser
