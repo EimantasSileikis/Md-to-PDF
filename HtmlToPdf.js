@@ -7,7 +7,9 @@ const puppeteer = require("puppeteer");
     const filePath = 'file:///' + __dirname + '/' + inputHtmlFile
 
     // Launch the headless browser
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+        args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    });;
     const page = await browser.newPage();
     await page.goto(filePath, { waitUntil: 'networkidle0' });
     await page.pdf({
